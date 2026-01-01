@@ -1,0 +1,19 @@
+# DevSafe CODEOWNERS
+# This file defines mandatory reviewers for critical parts of the system.
+
+# Default owner (everything)
+*       @VictorKVS
+
+# Safety & governance (cannot be changed casually)
+docs/devsafe/        @VictorKVS
+tests/guardrails/   @VictorKVS
+.github/workflows/  @VictorKVS
+
+# Core documentation flow
+docs/00_OVERVIEW.md @VictorKVS
+docs/01_TZ.md       @VictorKVS
+docs/02_TESTS.md    @VictorKVS
+docs/03_SOLUTION.md @VictorKVS
+
+# Releases & tags
+docs/04_RELEASES/   @VictorKVS
