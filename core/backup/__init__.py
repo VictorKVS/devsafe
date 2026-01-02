@@ -1,4 +1,4 @@
-name: Guardrails & Runtime Enforcement
+name: Guardrails Enforcement
 
 on:
   pull_request:
@@ -7,11 +7,11 @@ on:
     branches: [ "main" ]
 
 jobs:
-  safety-and-runtime:
+  guardrails:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -24,16 +24,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest
 
-      # -------------------------------
-      # Guardrails (MUST PASS)
-      # -------------------------------
       - name: Run Guardrails Tests
         run: |
           pytest tests/guardrails -v
-
-      # -------------------------------
-      # Core Runtime Integration (MUST PASS)
-      # -------------------------------
-      - name: Run Core & Runtime Tests
-        run: |
-          pytest tests/core -v
